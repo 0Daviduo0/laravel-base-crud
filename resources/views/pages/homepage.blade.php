@@ -6,7 +6,14 @@
 
     <ul>
         @foreach ($saints as $saint)
-            <li>{{ $saint -> name }} - {{ $saint -> blessing_count }}</li>
+            <li>
+                <a href="saint/{{ $saint -> id }}">
+                    {{ $saint -> name }} - {{ $saint -> blessing_count }}
+                </a>
+                --
+                <a href="{{ route('saint.destroy', ['id' => $saint -> id]) }}">X</a>
+            </li>
+                
         @endforeach
     </ul>
     
