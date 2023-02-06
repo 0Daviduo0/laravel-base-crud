@@ -4,6 +4,12 @@
 
     <h1>LISTA SANTI</h1>
 
+    ---------------------------
+
+    <a href=" {{ route('saint.add') }}">AGGIUNGI SANTO</a>
+
+    ---------------------------
+
     <ul>
         @foreach ($saints as $saint)
             <li>

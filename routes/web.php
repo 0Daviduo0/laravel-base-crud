@@ -16,6 +16,11 @@ use App\Http\Controllers\MainController;
 */
 
 Route::get('/', [MainController::class, 'home']) -> name('homepage');
-Route::get('/saint/{id}', [MainController::class, 'saintShow']);
-Route::get('/saint/{id}/destroy', [MainController::class, 'saintDetroy']) -> name('saint.destroy');
 
+Route::get('/saint/show/{id}', [MainController::class, 'saintShow']) -> name('saint.show');
+
+Route::get('/saint/destroy/{id}', [MainController::class, 'saintDetroy']) -> name('saint.destroy');
+
+Route::get('/saint/add', [MainController::class, 'saintAdd']) -> name('saint.add');
+
+Route::post('/saint/store', [MainController::class, 'saintToDB']) -> name('saint.store');
